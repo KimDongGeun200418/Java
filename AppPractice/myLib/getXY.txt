@@ -1,0 +1,8 @@
+public boolean onTouchEvent(MotionEvent event){
+        mx = (int) event.getX();
+        my = (int) event.getY();
+
+        dataNumber += 1;
+        saveData();
+        return true;
+    }

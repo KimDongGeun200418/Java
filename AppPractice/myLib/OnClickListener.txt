@@ -1,0 +1,54 @@
+package com.example.chap3_2;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        MyListener mL = new MyListener();
+
+        Button b1 = (Button) findViewById(R.id.b1);
+        Button b3 = (Button) findViewById(R.id.b3);
+        b1.setOnClickListener(mL);
+        b3.setOnClickListener(mL);
+
+        //익명구현
+        Button b2 = (Button) findViewById(R.id.b2);
+        b2. setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Toast.makeText(MainActivity.this, "익명객체 구현하여 만든 이벤트 처리", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+
+    //interface구현객체
+    class MyListener implements View.OnClickListener{
+
+        public void onClick(View v){ //v = 객체변수에 대입된 마이뷰 클래스
+
+            switch(v.getId()){
+                case R.id.b1:
+                    Toast.makeText(MainActivity.this,"리스너 인터페이스 구현하여 만든 이벤트 처리1", Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.b3:
+                    Toast.makeText(MainActivity.this,"리스너 인터페이스 구현하여 만든 이벤트 처리3", Toast.LENGTH_SHORT).show();
+                    break;
+            }//switch-End
+        }//onClick-Method-End
+
+    }//MyListener-End
+
+
+
+}//mainactivity-end

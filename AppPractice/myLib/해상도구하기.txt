@@ -1,0 +1,5 @@
+Display display = ((WindowManager) getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        Width = size.x;
+        Height = size.y;
