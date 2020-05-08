@@ -1,0 +1,22 @@
+여러 가지 실험 결과 앱을 완전히 종료하기 위해서는 다음의 스텝을 따라야 한다는 것을 깨달아서 남겨본다. 태스크를 백그라운드로 이동 -> 액티비티 종료 -> Task List에서 지우기 -> 앱 프로세스 종료. 이 중 하나만 빠져도 예기치 못한 상황이 발생한다. 아직까지는 이 방법으로 문제가 없는데, 앞으로도 문제가 없길 바라면서...
+
+ 
+
+앱을 완전 종료하는 방법:
+
+moveTaskToBack(true);						// 태스크를 백그라운드로 이동
+finishAndRemoveTask();						// 액티비티 종료 + 태스크 리스트에서 지우기
+android.os.Process.killProcess(android.os.Process.myPid());	// 앱 프로세스 종료
+ 
+
+혹시 태스크 리스트에 앱이 남기를 원하는 경우는 다음과 같이 하면 된다:
+
+moveTaskToBack(true);
+finish();
+android.os.Process.killProcess(android.os.Process.myPid());
+ 
+
+혹시 액티비티만 죽이고, 프로세스는 계속 실행하려면 다음과 같이 한다:
+
+moveTaskToBack(true);
+finishAndRemoveTask();

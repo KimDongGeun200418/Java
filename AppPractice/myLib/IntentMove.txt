@@ -1,0 +1,4 @@
+Intent intent = new Intent(현재액티비티,this, 이동할액티비티.class);
+startActivity(intent);
+
+startActivity(new Intent(SplashActivity.this, LoginActivity.class));

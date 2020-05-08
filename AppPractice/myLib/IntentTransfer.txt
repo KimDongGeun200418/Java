@@ -1,0 +1,18 @@
+//값 저장할 때 클릭시에 값 받아오도록 위치 주의
+값저장한변수 = et_test.getText().toString();
+Intent intent = new Intent;
+intent.putExtra("별명", 값저장한변수);
+startActivity(intent);
+
+
+
+//전송받는 액티비티
+//타입에 따라 Integer등 이용
+
+Intent intent = getIntent();
+타입 str = intent.getStringExtra("별명");
+
+
+
+
+

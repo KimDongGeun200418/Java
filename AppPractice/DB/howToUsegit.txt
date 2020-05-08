@@ -1,0 +1,19 @@
+﻿IAMAI1의 repository의 주소를 복사하시고
+
+원하는 디렉토리에 git bash를 실행해주세요
+git clone <shift + insert>
+
+그리고 그 생성한 파일에 들어가서 다시 git bash를 실행해주세요
+그 다음부터는 무조건 이 순서로 하셔야 합니다. (멋대로 파일을 올리시면 파일 버전에 혼동이 옵니다.)
+
+git pull origin master
+
+git status
+
+git add .
+
+git status
+
+git commit -m "내가 원하는 코멘트"
+
+git push origin master

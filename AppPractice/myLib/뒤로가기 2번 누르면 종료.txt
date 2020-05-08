@@ -1,0 +1,32 @@
+private long backBtnTime = 0;
+
+    @Override
+    public void onBackPressed() {
+        long curTime = System.currentTimeMillis();
+        long gapTime = curTime - backBtnTime;
+
+        if(0 <= gapTime && gapTime <= 2000){
+            super.onBackPressed();
+        }else{
+            backBtnTime = curTime;
+            Toast.makeText(this,"한번 더 누르면 종료됩니다.",Toast.LENGTH_SHORT).show();
+        }
+
+    }//onBackPressed-Method-End
+
+==============================================================
+private long backBtnTime = 0; //back버튼 두번 시간
+
+    @Override
+    public void onBackPressed() {//뒤로가기 버튼이 눌렸을 때
+        long curTime = System.currentTimeMillis();
+        long gapTime = curTime - backBtnTime; //백버튼 누르는 간격 체크
+
+        if(0 <= gapTime && gapTime <= 2000){ //2초 내에 다시 누르면 종료
+            super.onBackPressed();
+        }else{
+            backBtnTime = curTime; //현재 시간 저장
+            Toast.makeText(this,"한번 더 누르면 종료됩니다.",Toast.LENGTH_SHORT).show();
+        }
+
+    }//onBackPressed-Method-End
