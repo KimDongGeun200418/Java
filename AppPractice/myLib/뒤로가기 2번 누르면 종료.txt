@@ -1,4 +1,5 @@
-private long backBtnTime = 0;
+pri
+vate long backBtnTime = 0;
 
     @Override
     public void onBackPressed() {
