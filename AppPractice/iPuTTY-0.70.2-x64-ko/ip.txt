@@ -1,0 +1,13 @@
+45.119.147.218 8080 //서버접속용 공인ip putty이용시
+49.50.174.133 //외부접속용 공인ip
+
+파일질라로 입장
+서버접속용 공인ip이용
+45.119.147.218 root tpdlqjS2 8080
+
+
+strapi이용
+cd /usr/local
+cd iamaicd strapi-project
+npm run develop
+http://49.50.174.133:1337/admin
